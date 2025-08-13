@@ -42,12 +42,11 @@ ticker_sim <- function(ticker, replications, train_dates, score_dates) {
         scr_closing_prices, type="l", col="red")
 }
 
+trn_date <- c("2020-1-1", "2024-12-31")  # choose a date range to compute estimates
+scr_date <- c("2025-01-01", "2025-12-31")  # choose a date range to simulate
 
 popular_tickers <- c("AAPL", "MSFT", "NVDA", "AMZN",
                      "GOOG", "META", "TSLA", "F", "WMT")
-
-trn_date <- c("2020-1-1", "2024-12-31")  # choose a date range to compute estimates
-scr_date <- c("2025-01-01", "2025-12-31")  # choose a date range to simulate
 
 for (i in 1:length(popular_tickers)) {  # loop through popular companies
   ticker_sim(popular_tickers[i], 50, trn_date, scr_date)
